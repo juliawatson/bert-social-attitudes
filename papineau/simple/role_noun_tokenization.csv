@@ -1,0 +1,21 @@
+stimuli_set,tokenization,masked_version,a/an,mask_variants
+"('actor', 'actress')","[['actor'], ['actress']]",[MASK],an,"['actor', 'actress']"
+"('anchor', 'anchorman', 'anchorwoman')","[['anchor'], ['anchor', '##man'], ['anchor', '##woman']]",,an,
+"('flight attendant', 'steward', 'stewardess')","[['flight', 'attendant'], ['steward'], ['steward', '##ess']]",,a,
+"('businessperson', 'businessman', 'businesswoman')","[['business', '##person'], ['businessman'], ['business', '##woman']]",,a,
+"('camera operator', 'cameraman', 'camerawoman')","[['camera', 'operator'], ['camera', '##man'], ['camera', '##woman']]",camera [MASK],a,"['operator', '##man', '##woman']"
+"('congressperson', 'congressman', 'congresswoman')","[['congress', '##person'], ['congressman'], ['congress', '##woman']]",,a,
+"('craftsperson', 'craftsman', 'craftswoman')","[['crafts', '##person'], ['craftsman'], ['crafts', '##woman']]",,a,
+"('crewmember', 'crewman', 'crewwoman')","[['crew', '##me', '##mber'], ['crew', '##man'], ['crew', '##woman']]",,a,
+"('firefighter', 'fireman', 'firewoman')","[['fire', '##fighter'], ['fire', '##man'], ['fire', '##woman']]",fire [MASK],a,"['##fighter', '##man', '##woman']"
+"('foreperson', 'foreman', 'forewoman')","[['fore', '##person'], ['foreman'], ['fore', '##woman']]",,a,
+"('heir', 'heiress')","[['heir'], ['heiress']]",[MASK],an,"['heir', 'heiress']"
+"('hero', 'heroine')","[['hero'], ['heroine']]",[MASK],a,"['hero', 'heroine']"
+"('host', 'hostess')","[['host'], ['hostess']]",[MASK],a,"['host', 'hostess']"
+"('hunter', 'huntress')","[['hunter'], ['hunt', '##ress']]",,a,
+"('layperson', 'layman', 'laywoman')","[['lay', '##person'], ['lay', '##man'], ['lay', '##woman']]",lay [MASK],a,"['##person', '##man', '##woman']"
+"('police officer', 'policeman', 'policewoman')","[['police', 'officer'], ['policeman'], ['police', '##woman']]",,a,
+"('salesperson', 'salesman', 'saleswoman')","[['sales', '##person'], ['salesman'], ['sales', '##woman']]",,a,
+"('stunt double', 'stuntman', 'stuntwoman')","[['stunt', 'double'], ['stunt', '##man'], ['stunt', '##woman']]",stunt [MASK],a,"['double', '##man', '##woman']"
+"('villain', 'villainess')","[['villain'], ['villain', '##ess']]",,a,
+"('meteorologist', 'weatherman', 'weatherwoman')","[['meteor', '##ologist'], ['weather', '##man'], ['weather', '##woman']]",,a,

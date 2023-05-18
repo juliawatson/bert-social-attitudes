@@ -1,0 +1,4 @@
+.DS_Store
+papineau/**/bert_predictions*.csv
+papineau/**/stiimuli.csv
+**/**/__pycache__/
