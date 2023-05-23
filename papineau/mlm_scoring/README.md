@@ -1,9 +1,9 @@
 # bert_gender: papineau stimuli - mlm_scoring method
 
 The key difference between this approach and the simple/direct approach (in
-../simple) is that, rather than using p(actress|context), we use a
-masked language modeling approach. This allows us to use their full set of
-stimuli.
+../simple) is that, rather than directly using p(role_noun|context), we 
+approximate it based on the probabilities of the other words in the sentence.
+This allows us to use their full set of stimuli.
 
 This draws on:
 * Nangia et al. (2020) https://arxiv.org/pdf/2010.00133.pdf
@@ -33,10 +33,10 @@ a) Compute BERT predictions per word for the sentences in stimuli.csv
 b) Aggregate the results of step 2a into per-sentence probabilities.
   * Run script part_2b_process_bert_predictions.py
   * Outputs:
-      bert_predictions_by_sentence_exclude_modified.csv
-      bert_predictions_by_sentence_normalized_exclude_modified_frequency_reweighted.csv
-      bert_predictions_averaged_exclude_modified_adoption_frequency_reweighted.csv
-      bert_predictions_averaged_exclude_modified_compound_frequency_reweighted.csv
+     - bert_predictions_by_sentence_exclude_modified.csv
+     - bert_predictions_by_sentence_normalized_exclude_modified_frequency_reweighted.csv
+     - bert_predictions_averaged_exclude_modified_adoption_frequency_reweighted.csv
+     - bert_predictions_averaged_exclude_modified_compound_frequency_reweighted.csv
   * This relies on bert_predictions.csv from the previous step.
   * This relies on the frequency counts computed in step 0
   * This takes ~40 minutes on my laptop -- ran it twice
@@ -45,24 +45,37 @@ c) Evaluate the correlation between the simple method and the approximations
    with and without the modified included.
   * Run script part_2c_evaluate_correlation.py
   * Relies on: 
-      output of 2b above.
-      bert_predictions_expanded.csv from step 2b of the simple method.
+     - output of 2b above.
+     - bert_predictions_expanded.csv from step 2b of the simple method.
   * This prints:
-      bert_likelihood: r=0.4195, p=0.0
-      corpus_prior: r=0.3708, p=0.0
-      frequency_weighted_posterior: r=0.7600, p=0.0
+     - bert_likelihood: r=0.4195, p=0.0
+     - corpus_prior: r=0.3708, p=0.0
+     - frequency_weighted_posterior: r=0.7600, p=0.0
 
-## Step 3: Compute log likelihood of responses using BERT -- same as simple method
+## Step 3: Compute log likelihood of responses using BERT
+
+a) Filter Papineau production data (select only critical trials; 
+   remove participants that failed attention checks).
+* Run script ../simple/part_3a_filter_production_data.R
+* Because this only filters the human data, it is identical for the simple and 
+  mlm_scoring methods, and only needs to be run once.
+* Relies on having downloaded Papineau production data, which is in their github repo 
+  (https://github.com/BranPap/gender_ideology). 
+  Right now, this script is set up to run with the Papineau et al. github repo 
+  cloned in the same directory as this github repo.
+  If you clone it somewhere else, you will need to update the path where data is loaded
+  from in this script.
+* Outputs ../simple/papineau_production_data_filtered.csv
 
 b) Compute the log likelihood of the production data based on BERT predictions
 * Run script part_3b_bert_log_likelihood.py
 * Relies on:
-     output of part_3a_filter_production_data.py from simple method (human data)
-     output of part 2b above (processed BERT predictions)
+   - output of part_3a_filter_production_data.R from simple method (human data)
+   - output of part 2b above (processed BERT predictions)
 * Outputs results csvs to results/ dir.
 
 
-## Step 4: Create visualizations -- same as simple method
+## Step 4: Create visualizations
 * Run script part_4_create_visualizations.py
 * This creates png files in the visualizations/ dir.
 
