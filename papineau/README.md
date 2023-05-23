@@ -1,6 +1,6 @@
 # Analyses with Papineau et al. (2022) stimuli
 
-This directory includes analyses on data from Papineau et al. (2022).
+This directory includes analyses on data from Papineau et al. (2022), which is available at https://github.com/BranPap/gender_ideology/.
 
 There are two subdirectories, corresponding to two versions of the analysis:
 * simple/ - the BERT "direct method" from Watson et al., which is only possible for
