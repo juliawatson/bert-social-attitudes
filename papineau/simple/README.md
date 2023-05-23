@@ -49,6 +49,7 @@ b) Compute the log likelihood of the production data based on BERT predictions
 * Relies on:
   bert_predictions_averaged_compound.csv
   bert_predictions_averaged_adoption.csv 
+  papineau_production_data_filtered.csv
 * Outputs results to:
   results/compound_loglik.csv
   results/adoption_loglik.csv
