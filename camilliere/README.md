@@ -1,6 +1,6 @@
 # Analyses with Camilliere et al. (2021) stimuli
 
-This directory includes the code for analyses with stimuli from Camilliere et al. (2021).  Note that running these analyses requires their data, which is not included in this repository. (See description of the reqiured data files at the end of this README.)
+This directory includes the code for analyses with stimuli from Camilliere et al. (2021).  Note that running these analyses requires their data, which is not included in this repository. We requested the data from the authors. (See description of the reqiured data files at the end of this README.)
 
 ## Step 1: Generate masked stimuli to feed into BERT
   * Run script part_1_create_stimuli.py
