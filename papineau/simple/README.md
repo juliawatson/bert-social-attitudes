@@ -25,9 +25,9 @@ a) Compute BERT predictions for the stimuli in stimuli.csv
 b) Unpack the BERT predictions so they are useful for regressions and visualizations
 * Run script part_2b_process_bert_predictions.py
 * Outputs:
-  bert_predictions_expanded.csv
-  bert_predictions_averaged_compound.csv
-  bert_predictions_averaged_adoption.csv
+  - bert_predictions_expanded.csv
+  - bert_predictions_averaged_compound.csv
+  - bert_predictions_averaged_adoption.csv
 * This relies on bert_predictions.csv from the previous step
 
 
@@ -47,17 +47,17 @@ a) Filter Papineau production data (select only critical trials;
 b) Compute the log likelihood of the production data based on BERT predictions
 * Run script part_3b_bert_log_likelihood.py
 * Relies on:
-  bert_predictions_averaged_compound.csv
-  bert_predictions_averaged_adoption.csv 
-  papineau_production_data_filtered.csv
+  - bert_predictions_averaged_compound.csv
+  - bert_predictions_averaged_adoption.csv 
+  - papineau_production_data_filtered.csv
 * Outputs results to:
-  results/compound_loglik.csv
-  results/adoption_loglik.csv
+  - results/compound_loglik.csv
+  - results/adoption_loglik.csv
 
 
 ## Step 4: Create visualizations
 * Run script part_4_create_visualizations.py
 * Relies on:
-  bert_predictions_averaged_compound.csv
-  bert_predictions_averaged_adoption.csv 
+  - bert_predictions_averaged_compound.csv
+  - bert_predictions_averaged_adoption.csv 
 * Outputs visualizations to visualizations/ dir
